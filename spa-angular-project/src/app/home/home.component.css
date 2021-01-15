@@ -1,0 +1,11 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.my-app-title {
+  margin-left: 12px;
+}
+
+button {
+  margin-right: 8px;
+}
