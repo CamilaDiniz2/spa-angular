@@ -1,1 +1,42 @@
-<p>professores works!</p>
+<mat-card>
+  <mat-card-title>Professores</mat-card-title>
+  <mat-card-subtitle
+    >Numero de professores: {{ numProfessores }}</mat-card-subtitle
+  >
+
+  <div class="example-button-row">
+    <button (click)="aumentarValor()" mat-stroked-button>
+      Aumentar número
+    </button>
+    <button (click)="diminuirValor()" mat-stroked-button color="accent">
+      Diminuir valor
+    </button>
+    <button (click)="mostraProfessores()" mat-stroked-button color="primary">
+      Mostrar professores
+    </button>
+    <button (click)="resetarValor()" mat-stroked-button color="warn">
+      Resetar valor
+    </button>
+  </div>
+
+  <table *ngIf="mostrarProfessores">
+    <thread>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Disciplinas</th>
+        <th>Curso</th>
+      </tr>
+      <tbody>
+        <tr *ngFor="let professor of listaProfessores">
+          <th>{{ professor.nome }}</th>
+          <th>{{ professor.idade }}</th>
+          <th>
+            {{ professor.disciplina }}
+          </th>
+          <th>{{ professor.curso }}</th>
+        </tr>
+      </tbody>
+    </thread>
+  </table>
+</mat-card>

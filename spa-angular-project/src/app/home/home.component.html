@@ -24,6 +24,37 @@
   </button>
 </mat-toolbar>
 
-<spa-alunos></spa-alunos>
+<spa-alunos [valorInicial]="valor"></spa-alunos>
+
+<div class="example-button-row">
+  <button (click)="mudarValor()" mat-raised-button color="primary">
+    Mudar valor
+  </button>
+  <button (click)="reiniciarValor()" mat-raised-button color="warn">
+    Reiniciar valor
+  </button>
+  <button (click)="exibirTabela()" mat-raised-button color="accent">
+    Exibir tabela
+  </button>
+</div>
+
+<table *ngIf="exibeTabela">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>E-mail</th>
+      <th>Curso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of listaAlunos">
+      <th>{{ aluno.nome }}</th>
+      <th>{{ aluno.idade }}</th>
+      <th>{{ aluno.email }}</th>
+      <th>{{ aluno.curso }}</th>
+    </tr>
+  </tbody>
+</table>
 
 <spa-professores></spa-professores>

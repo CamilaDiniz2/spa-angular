@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'spa-alunos',
@@ -7,19 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunosComponent implements OnInit {
   valor;
+  exibeTabela: boolean = false;
+
   constructor() {}
 
-  ngOnInit(): void {
-    this.valor = 10;
-  }
+  ngOnInit(): void {}
 
-  mudarValor() {
-    this.valor++;
-  }
-
-  reiniciarValor() {
-    this.valor = 0;
-  }
-
-  exibirTabela() {}
+  @Input() valorInicial: number = 5;
 }
